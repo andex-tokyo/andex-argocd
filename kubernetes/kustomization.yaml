@@ -8,7 +8,9 @@ resources:
 - https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/ha/install.yaml
 - applications/sealed-secrets.yaml
 - applications/gokapi.yaml
-- sealed-secrets
+- sealed-secrets/sealed-argocd-secret.yaml
+- sealed-secrets/sealed-file-transfer-repo.yaml
+- sealed-secrets/sealed-argocd-redis.yam
 
 components:
 - https://github.com/argoproj-labs/argocd-extensions/manifests
