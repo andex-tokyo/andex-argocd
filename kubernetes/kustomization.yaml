@@ -10,7 +10,7 @@ resources:
 - applications/gokapi.yaml
 - sealed-secrets/sealed-argocd-secret.yaml
 - sealed-secrets/sealed-file-transfer-repo.yaml
-- sealed-secrets/sealed-argocd-redis.yam
+- sealed-secrets/sealed-argocd-redis.yaml
 
 components:
 - https://github.com/argoproj-labs/argocd-extensions/manifests
