@@ -4,7 +4,6 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-# - argocd/repos-secrets.yaml
 - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 - applications/sealed-secrets.yaml
 - applications/gokapi.yaml
@@ -13,6 +12,6 @@ resources:
 - sealed-secrets/sealed-argocd-redis.yaml
 
 patches:
-# - path: argocd/argocd-secrets.yaml
+- path: argocd/disable-argocd-secret.yaml
 - path: argocd/argocd-cmd-params-cm.yaml
 - path: argocd/argocd-nodeport.yaml
