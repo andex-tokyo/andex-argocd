@@ -3,7 +3,7 @@ apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
   creationTimestamp: null
-  name: file-transfer-repo
+  name: repo-2126746468
   namespace: argocd
 spec:
   encryptedData:

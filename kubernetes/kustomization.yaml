@@ -9,7 +9,7 @@ resources:
 - applications/sealed-secrets.yaml
 - applications/gokapi.yaml
 - sealed-secrets/sealed-argocd-secret.yaml
-- sealed-secrets/sealed-file-transfer-repo.yaml
+- sealed-secrets/sealed-repo-2126746468.yaml
 - sealed-secrets/sealed-argocd-redis.yaml
 
 components:
