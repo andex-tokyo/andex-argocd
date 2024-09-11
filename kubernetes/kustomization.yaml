@@ -12,6 +12,5 @@ resources:
 - sealed-secrets/sealed-argocd-redis.yaml
 
 patches:
-- path: argocd/disable-argocd-secret.yaml
 - path: argocd/argocd-cmd-params-cm.yaml
 - path: argocd/argocd-nodeport.yaml
