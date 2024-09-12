@@ -17,10 +17,9 @@
       "matchStrings": [
         "targetRevision: (?<currentValue>.*)"
       ],
-      "datasourceTemplate": "github-tags",
-      "depNameTemplate": "DataDog/helm-charts",
-      "versioningTemplate": "semver",
-      "extractVersionTemplate": "^datadog-v(?<version>\\d+\\.\\d+\\.\\d+)$"
+      "datasourceTemplate": "helm",
+      "depNameTemplate": "datadog",
+      "versioningTemplate": "semver"
     },
     {
       "fileMatch": ["kubernetes/applications/sealed-secrets.yaml"],
