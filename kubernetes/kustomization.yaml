@@ -7,6 +7,7 @@ resources:
 - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 - applications/sealed-secrets.yaml
 - applications/gokapi.yaml
+- applications/datadog-agent.yaml
 - sealed-secrets/sealed-argocd-secret.yaml
 - sealed-secrets/sealed-repo-2126746468.yaml
 - sealed-secrets/sealed-argocd-redis.yaml
