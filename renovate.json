@@ -1,0 +1,35 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["kubernetes/kustomization.yaml"],
+      "matchStrings": [
+        "https://raw.githubusercontent.com/argoproj/argo-cd/(?<currentValue>[^/]+)/manifests/install.yaml"
+      ],
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "argoproj/argo-cd",
+      "versioningTemplate": "semver"
+    },
+    {
+      "fileMatch": ["kubernetes/applications/datadog-agent.yaml"],
+      "matchStrings": [
+        "targetRevision: (?<currentValue>.*)"
+      ],
+      "datasourceTemplate": "helm",
+      "depNameTemplate": "datadog/datadog",
+      "versioningTemplate": "semver"
+    },
+    {
+      "fileMatch": ["kubernetes/applications/sealed-secrets.yaml"],
+      "matchStrings": [
+        "targetRevision: (?<currentValue>.*)"
+      ],
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "bitnami-labs/sealed-secrets",
+      "versioningTemplate": "semver",
+      "extractVersion": "^helm-v(?<version>\\d+\\.\\d+\\.\\d+)$"
+    }
+  ]
+}
