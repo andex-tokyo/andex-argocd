@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-application-controller
+spec:
+  template:
+    metadata:
+      annotations:
+        ad.datadoghq.com/argocd-application-controller.checks: |
+          {
+            "argocd": {
+              "init_config": {},
+              "instances": [
+                {
+                  "app_controller_endpoint": "http://%%host%%:8082/metrics"
+                }
+              ]
+            }
+          }
+    spec:
+      containers:
+        - name: 'argocd-application-controller'
+          env:
+            - name: ARGOCD_METRICS_APP_LABELS
+              value: "true"

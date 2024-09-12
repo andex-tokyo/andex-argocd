@@ -16,3 +16,6 @@ resources:
 patches:
 - path: argocd/argocd-cmd-params-cm.yaml
 - path: argocd/argocd-nodeport.yaml
+- path: argocd/argocd-application-controller.yaml
+- path: argocd/argocd-server.yaml
+- path: argocd/argocd-repo-server.yaml

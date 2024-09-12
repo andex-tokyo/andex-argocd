@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-server
+spec:
+  template:
+    metadata:
+      annotations:
+        ad.datadoghq.com/argocd-server.checks: |
+          {
+            "argocd": {
+              "init_config": {},
+              "instances": [
+                {
+                  "api_server_endpoint": "http://%%host%%:8083/metrics"
+                }
+              ]
+            }
+          }
