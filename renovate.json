@@ -29,7 +29,7 @@
       ],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "bitnami-labs/sealed-secrets",
-      "versioningTemplate": "helm",
+      "versioningTemplate": "semver",
       "extractVersionTemplate": "^helm-v(?<version>\\d+\\.\\d+\\.\\d+)$"
     }
   ],
