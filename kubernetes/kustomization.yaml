@@ -11,17 +11,8 @@ resources:
 - sealed-secrets/sealed-argocd-secret.yaml
 - sealed-secrets/sealed-repo-2126746468.yaml
 - sealed-secrets/sealed-argocd-redis.yaml
+- sealed-secrets/sealed-datadog-secret.yaml
 
 patches:
 - path: argocd/argocd-cmd-params-cm.yaml
 - path: argocd/argocd-nodeport.yaml
-
----
-
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-
-namespace: datadog
-
-resources:
-  - sealed-secrets/sealed-datadog-secret.yaml
