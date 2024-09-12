@@ -2,14 +2,6 @@
   "extends": [
     "config:base"
   ],
-  "helm": {
-    "enabled": true,
-    "registries": [
-      {
-        "url": "https://helm.datadoghq.com"
-      }
-    ]
-  },
   "regexManagers": [
     {
       "fileMatch": ["kubernetes/kustomization.yaml"],
@@ -27,7 +19,8 @@
       ],
       "datasourceTemplate": "helm",
       "depNameTemplate": "datadog/datadog",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "registryUrls": ["https://helm.datadoghq.com"]
     },
     {
       "fileMatch": ["kubernetes/applications/sealed-secrets.yaml"],
