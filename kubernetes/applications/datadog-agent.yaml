@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: datadog-agent
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://helm.datadoghq.com
+    chart: datadog
+    helm:
+      values: |
+        datadog:
+          apiKeyExistingSecret: datadog-secret
+          site: ap1.datadoghq.com
+          logs:
+            enabled: true
+            containerCollectAll: true
+          apm:
+            enabled: true
+          processAgent:
+            enabled: true
+          systemProbe:
+            enabled: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: datadog
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
