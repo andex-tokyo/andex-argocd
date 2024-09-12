@@ -18,9 +18,11 @@
         "targetRevision: (?<currentValue>.*)"
       ],
       "datasourceTemplate": "helm",
-      "depNameTemplate": "datadog/datadog",
+      "depNameTemplate": "datadog",
       "versioningTemplate": "semver",
-      "registryUrls": ["https://helm.datadoghq.com"]
+      "prBodyNotes": [
+    "[compare](https://github.com/DataDog/helm-charts/compare/datadog-{{currentVersion}}...datadog-{{newVersion}})"
+  ]
     },
     {
       "fileMatch": ["kubernetes/applications/sealed-secrets.yaml"],
