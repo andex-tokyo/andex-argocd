@@ -28,7 +28,8 @@
       ],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "bitnami-labs/sealed-secrets",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "^helm-v(?<version>\\d+\\.\\d+\\.\\d+)$"
     }
   ]
 }
