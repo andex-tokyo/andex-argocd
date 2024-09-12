@@ -31,5 +31,6 @@
       "versioningTemplate": "semver",
       "extractVersionTemplate": "^helm-v(?<version>\\d+\\.\\d+\\.\\d+)$"
     }
-  ]
+  ],
+  "assignees": ["andex-tokyo"]
 }
