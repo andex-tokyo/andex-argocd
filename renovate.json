@@ -20,7 +20,7 @@
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "DataDog/helm-charts",
       "versioningTemplate": "semver",
-      "extractVersionTemplate": "^datadog-v(?<version>\\d+\\.\\d+\\.\\d+)$"
+      "extractVersionTemplate": "^datadog-(?<version>\\d+\\.\\d+\\.\\d+)$"
     },
     {
       "fileMatch": ["kubernetes/applications/sealed-secrets.yaml"],
