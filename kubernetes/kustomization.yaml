@@ -18,3 +18,4 @@ patches:
 - path: argocd/argocd-application-controller.yaml
 - path: argocd/argocd-server.yaml
 - path: argocd/argocd-repo-server.yaml
+- path: argocd/argocd-secrets.yaml
