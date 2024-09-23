@@ -8,7 +8,7 @@ resources:
 - applications/sealed-secrets.yaml
 - applications/gokapi.yaml
 - applications/datadog-agent.yaml
-- applications/homebridge.yaml
+# - applications/homebridge.yaml
 - sealed-secrets/sealed-argocd-secret.yaml
 - sealed-secrets/sealed-repo-2126746468.yaml
 - sealed-secrets/sealed-datadog-secret.yaml
