@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://helm.datadoghq.com
-    targetRevision: 3.71.1
+    targetRevision: 3.72.1
     chart: datadog
     helm:
       values: |
