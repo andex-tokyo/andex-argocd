@@ -23,9 +23,6 @@ spec:
             enabled: true
           networkMonitoring:
             enabled: true
-          systemProbe:
-            enableTCPQueueLength: true
-            enableOOMKill: true
           securityAgent:
             runtime:
               enabled: true
