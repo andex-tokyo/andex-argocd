@@ -23,6 +23,8 @@ spec:
             enabled: true
           networkMonitoring:
             enabled: true
+          systemProbe:
+            enabled: false
           securityAgent:
             runtime:
               enabled: true
