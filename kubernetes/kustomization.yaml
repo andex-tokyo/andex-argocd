@@ -7,9 +7,6 @@ resources:
 - https://raw.githubusercontent.com/argoproj/argo-cd/v2.13.2/manifests/install.yaml
 - applications/sealed-secrets.yaml
 - applications/gokapi.yaml
-- applications/datadog-agent.yaml
-# - applications/homebridge.yaml
-# - applications/langfuse.yaml
 - applications/dify.yaml
 - sealed-secrets/sealed-argocd-secret.yaml
 - sealed-secrets/sealed-repo-2126746468.yaml
