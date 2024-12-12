@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: newrelic
+  namespace: argocd
+spec:
+  destination:
+    namespace: newrelic
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: kubernetes
+    repoURL: https://github.com/andex-tokyo/andex-newrelic.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
