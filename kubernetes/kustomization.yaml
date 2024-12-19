@@ -6,7 +6,7 @@ namespace: argocd
 resources:
 - https://raw.githubusercontent.com/argoproj/argo-cd/v2.13.2/manifests/install.yaml
 - applications/sealed-secrets.yaml
-# - applications/gokapi.yaml
+- applications/gokapi.yaml
 - applications/dify.yaml
 - applications/newrelic.yaml
 - sealed-secrets/sealed-argocd-secret.yaml
