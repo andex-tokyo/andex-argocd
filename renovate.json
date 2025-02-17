@@ -8,7 +8,7 @@
       "matchStrings": [
         "https://raw.githubusercontent.com/argoproj/argo-cd/(?<currentValue>[^/]+)/manifests/install.yaml"
       ],
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "github-releases",
       "depNameTemplate": "argoproj/argo-cd",
       "versioningTemplate": "semver"
     },
@@ -27,7 +27,7 @@
       "matchStrings": [
         "targetRevision: (?<currentValue>.*)"
       ],
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "github-releases",
       "depNameTemplate": "bitnami-labs/sealed-secrets",
       "versioningTemplate": "semver",
       "extractVersionTemplate": "^helm-v(?<version>\\d+\\.\\d+\\.\\d+)$"
