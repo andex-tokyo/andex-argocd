@@ -11,6 +11,11 @@ spec:
     targetRevision: 0.70.0
     helm:
       releaseName: andex-signoz
+      values: |
+        frontend:
+          service:
+            type: NodePort
+            nodePort: 32080
   destination:
     server: https://kubernetes.default.svc
     namespace: signoz
