@@ -15,7 +15,7 @@ spec:
         frontend:
           service:
             type: NodePort
-            nodePort: 32080
+            port: 32080
   destination:
     server: https://kubernetes.default.svc
     namespace: signoz
