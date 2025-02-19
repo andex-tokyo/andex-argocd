@@ -8,7 +8,6 @@ resources:
 - applications/sealed-secrets.yaml
 - applications/gokapi.yaml
 - applications/dify.yaml
-- applications/newrelic.yaml
 - applications/docuseal.yaml
 - applications/signoz.yaml
 - sealed-secrets/sealed-argocd-secret.yaml
