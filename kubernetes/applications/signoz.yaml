@@ -31,3 +31,27 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
+---
+apiVersion: opentelemetry.io/v1alpha1
+kind: Instrumentation
+metadata:
+  name: signoz-instrumentation
+  namespace: signoz
+spec:
+  exporter:
+    endpoint: http://andex-signoz-otel-collector.signoz.svc.cluster.local:4317
+  propagators:
+    - tracecontext
+    - baggage
+    - b3
+  sampler:
+    type: parentbased_traceidratio
+    argument: "0.25"  # サンプリングレート（25%）
+  # 各言語用の自動計装設定
+  nodejs:
+    image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:latest
+  python:
+    image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:latest
+  ruby:
+    image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-ruby:latest
