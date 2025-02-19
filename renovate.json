@@ -41,6 +41,26 @@
       "depNameTemplate": "bitnami-labs/sealed-secrets",
       "versioningTemplate": "semver",
       "extractVersionTemplate": "^helm-v(?<version>\\d+\\.\\d+\\.\\d+)$"
+    },
+    {
+      "fileMatch": ["kubernetes/applications/cert-manager.yaml"],
+      "matchStrings": [
+        "targetRevision: (?<currentValue>.*)"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "cert-manager/cert-manager",
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "^v(?<version>\\d+\\.\\d+\\.\\d+)$"
+    },
+    {
+      "fileMatch": ["kubernetes/applications/otel-operator.yaml"],
+      "matchStrings": [
+        "targetRevision: (?<currentValue>.*)"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "open-telemetry/opentelemetry-helm-charts",
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "^opentelemetry-operator-(?<version>\\d+\\.\\d+\\.\\d+)$"
     }
   ],
   "assignees": ["andex-tokyo"]
