@@ -15,12 +15,22 @@
     {
       "fileMatch": ["kubernetes/applications/signoz.yaml"],
       "matchStrings": [
-        "targetRevision: (?<currentValue>.*)"
+        "chart: signoz\\n.*targetRevision: (?<currentValue>.*)"
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "SigNoz/charts",
       "versioningTemplate": "semver",
       "extractVersionTemplate": "^signoz-(?<version>\\d+\\.\\d+\\.\\d+)$"
+    },
+    {
+      "fileMatch": ["kubernetes/applications/signoz.yaml"],
+      "matchStrings": [
+        "chart: k8s-infra\\n.*targetRevision: (?<currentValue>.*)"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "SigNoz/charts",
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "^k8s-infra-(?<version>\\d+\\.\\d+\\.\\d+)$"
     },
     {
       "fileMatch": ["kubernetes/applications/sealed-secrets.yaml"],
