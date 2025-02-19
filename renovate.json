@@ -15,7 +15,7 @@
     {
       "fileMatch": ["kubernetes/applications/signoz.yaml"],
       "matchStrings": [
-        "chart: signoz\\n.*targetRevision: (?<currentValue>.*)"
+        "chart: signoz.*?targetRevision: (?<currentValue>.*)"
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "SigNoz/charts",
@@ -25,7 +25,7 @@
     {
       "fileMatch": ["kubernetes/applications/signoz.yaml"],
       "matchStrings": [
-        "chart: k8s-infra\\n.*targetRevision: (?<currentValue>.*)"
+        "chart: k8s-infra.*?targetRevision: (?<currentValue>.*)"
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "SigNoz/charts",

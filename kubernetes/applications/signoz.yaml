@@ -7,8 +7,8 @@ spec:
   project: default
   sources:
     - chart: signoz
-      repoURL: https://charts.signoz.io
       targetRevision: 0.70.0
+      repoURL: https://charts.signoz.io
       helm:
         releaseName: andex-signoz
         values: |
@@ -16,8 +16,8 @@ spec:
             service:
               type: NodePort
     - chart: k8s-infra
-      repoURL: https://charts.signoz.io
       targetRevision: 0.12.1
+      repoURL: https://charts.signoz.io
       helm:
         releaseName: andex-k8s-infra
         values: |
