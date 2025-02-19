@@ -23,19 +23,18 @@ spec:
                     global:
                       scrape_interval: 60s
                     scrape_configs:
-                      - job_name: argocd-metrics
-                        metrics_path: /metrics
-                        scheme: http
+                      - job_name: 'argocd'
                         kubernetes_sd_configs:
                           - role: endpoints
                             namespaces:
-                              names: [argocd]
+                              names: ['argocd']
                         relabel_configs:
-                          - source_labels: [__meta_kubernetes_pod_container_name]
+                          - source_labels: [__meta_kubernetes_service_name]
                             action: keep
                             regex: (argocd-metrics|argocd-server|argocd-repo-server)
-                          - source_labels: [__meta_kubernetes_pod_container_name]
-                            target_label: container_name
+                          - source_labels: [__meta_kubernetes_endpoint_port_name]
+                            action: keep
+                            regex: metrics
     - chart: k8s-infra
       targetRevision: 0.12.1
       repoURL: https://charts.signoz.io
