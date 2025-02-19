@@ -17,12 +17,24 @@ spec:
               type: NodePort
           otelCollector:
             config:
+              service:
+                pipelines:
+                  metrics:
+                    receivers:
+                      - otlp
+                      - prometheus
+                    processors:
+                      - batch
+                    exporters:
+                      - clickhousemetricswrite
+                      - metadataexporter
               receivers:
                 prometheus:
                   config:
+                    global:
+                      scrape_interval: 30s
                     scrape_configs:
                       - job_name: 'argocd-metrics'
-                        scrape_interval: 30s
                         kubernetes_sd_configs:
                           - role: endpoints
                             namespaces:
@@ -36,7 +48,6 @@ spec:
                             regex: metrics
 
                       - job_name: 'argocd-server-metrics'
-                        scrape_interval: 30s
                         kubernetes_sd_configs:
                           - role: endpoints
                             namespaces:
@@ -50,7 +61,6 @@ spec:
                             regex: metrics
 
                       - job_name: 'argocd-repo-server'
-                        scrape_interval: 30s
                         kubernetes_sd_configs:
                           - role: endpoints
                             namespaces:
@@ -62,7 +72,6 @@ spec:
                         metrics_path: /metrics
 
                       - job_name: 'argocd-application-controller'
-                        scrape_interval: 30s
                         kubernetes_sd_configs:
                           - role: endpoints
                             namespaces:
@@ -72,29 +81,7 @@ spec:
                             action: keep
                             regex: argocd-applicationset-controller
                         metrics_path: /metrics
-          frontend:
-            service:
-              type: NodePort
-          otelCollector:
-            config:
-              receivers:
-                prometheus:
-                  config:
-                    global:
-                      scrape_interval: 60s
-                    scrape_configs:
-                      - job_name: 'argocd'
-                        kubernetes_sd_configs:
-                          - role: endpoints
-                            namespaces:
-                              names: ['argocd']
-                        relabel_configs:
-                          - source_labels: [__meta_kubernetes_service_name]
-                            action: keep
-                            regex: (argocd-metrics|argocd-server|argocd-repo-server)
-                          - source_labels: [__meta_kubernetes_endpoint_port_name]
-                            action: keep
-                            regex: metrics
+
     - chart: k8s-infra
       targetRevision: 0.12.1
       repoURL: https://charts.signoz.io
