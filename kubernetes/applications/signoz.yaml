@@ -5,16 +5,23 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    chart: signoz
-    repoURL: https://charts.signoz.io
-    targetRevision: 0.70.0
-    helm:
-      releaseName: andex-signoz
-      values: |
-        frontend:
-          service:
-            type: NodePort
+  sources:
+    - chart: signoz
+      repoURL: https://charts.signoz.io
+      targetRevision: 0.70.0
+      helm:
+        releaseName: andex-signoz
+        values: |
+          frontend:
+            service:
+              type: NodePort
+    - chart: k8s-infra
+      repoURL: https://charts.signoz.io
+      targetRevision: 0.12.1
+      helm:
+        releaseName: andex-k8s-infra
+        values: |
+          otelCollectorEndpoint: http://andex-signoz-otel-collector.signoz.svc.cluster.local:4317
   destination:
     server: https://kubernetes.default.svc
     namespace: signoz
