@@ -11,6 +11,7 @@ resources:
 - applications/docuseal.yaml
 - applications/signoz.yaml
 - applications/otel-operator.yaml
+- applications/cert-manager.yaml
 - sealed-secrets/sealed-argocd-secret.yaml
 - sealed-secrets/sealed-repo-2126746468.yaml
 - sealed-secrets/sealed-datadog-secret.yaml
