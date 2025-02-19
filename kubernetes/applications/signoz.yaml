@@ -20,6 +20,66 @@ spec:
               receivers:
                 prometheus:
                   config:
+                    scrape_configs:
+                      - job_name: 'argocd-metrics'
+                        scrape_interval: 30s
+                        kubernetes_sd_configs:
+                          - role: endpoints
+                            namespaces:
+                              names: ['argocd']
+                        relabel_configs:
+                          - source_labels: [__meta_kubernetes_service_name]
+                            action: keep
+                            regex: argocd-metrics
+                          - source_labels: [__meta_kubernetes_endpoint_port_name]
+                            action: keep
+                            regex: metrics
+
+                      - job_name: 'argocd-server-metrics'
+                        scrape_interval: 30s
+                        kubernetes_sd_configs:
+                          - role: endpoints
+                            namespaces:
+                              names: ['argocd']
+                        relabel_configs:
+                          - source_labels: [__meta_kubernetes_service_name]
+                            action: keep
+                            regex: argocd-server-metrics
+                          - source_labels: [__meta_kubernetes_endpoint_port_name]
+                            action: keep
+                            regex: metrics
+
+                      - job_name: 'argocd-repo-server'
+                        scrape_interval: 30s
+                        kubernetes_sd_configs:
+                          - role: endpoints
+                            namespaces:
+                              names: ['argocd']
+                        relabel_configs:
+                          - source_labels: [__meta_kubernetes_service_name]
+                            action: keep
+                            regex: argocd-repo-server
+                        metrics_path: /metrics
+
+                      - job_name: 'argocd-application-controller'
+                        scrape_interval: 30s
+                        kubernetes_sd_configs:
+                          - role: endpoints
+                            namespaces:
+                              names: ['argocd']
+                        relabel_configs:
+                          - source_labels: [__meta_kubernetes_service_name]
+                            action: keep
+                            regex: argocd-applicationset-controller
+                        metrics_path: /metrics
+          frontend:
+            service:
+              type: NodePort
+          otelCollector:
+            config:
+              receivers:
+                prometheus:
+                  config:
                     global:
                       scrape_interval: 60s
                     scrape_configs:
