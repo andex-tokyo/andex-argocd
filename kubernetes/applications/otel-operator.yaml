@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/open-telemetry/opentelemetry-operator.git
-    targetRevision: v0.118.0
-    path: config/manifest
+    chart: opentelemetry-operator
+    repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
+    targetRevision: 0.116.0
   destination:
     server: https://kubernetes.default.svc
     namespace: opentelemetry-operator-system
