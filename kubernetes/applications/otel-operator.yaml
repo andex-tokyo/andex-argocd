@@ -8,7 +8,7 @@ spec:
   source:
     chart: opentelemetry-operator
     repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
-    targetRevision: 0.116.0
+    targetRevision: 0.80.2
   destination:
     server: https://kubernetes.default.svc
     namespace: opentelemetry-operator-system
