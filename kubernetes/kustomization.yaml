@@ -13,6 +13,7 @@ resources:
 - applications/otel-operator.yaml
 - applications/cert-manager.yaml
 - applications/n8n.yaml
+- applications/open-webui.yaml
 - sealed-secrets/sealed-argocd-secret.yaml
 - sealed-secrets/sealed-repo-2126746468.yaml
 - sealed-secrets/sealed-datadog-secret.yaml
