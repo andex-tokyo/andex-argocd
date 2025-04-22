@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: andex-lobechat
+  name: andex-anythingllm
   namespace: argocd
 spec:
   destination:
-    namespace: lobechat
+    namespace: anythingllm
     server: https://kubernetes.default.svc
   project: default
   source:
