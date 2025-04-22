@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: open-webui
+  name: andex-lobechat
   namespace: argocd
 spec:
   destination:
-    namespace: librechat
+    namespace: lobechat
     server: https://kubernetes.default.svc
   project: default
   source:
