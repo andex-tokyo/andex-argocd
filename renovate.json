@@ -35,7 +35,7 @@
     {
       "fileMatch": ["kubernetes/applications/sealed-secrets.yaml"],
       "matchStrings": [
-        "targetRevision: (?<currentValue>.*)"
+        "\"chart: sealed-secrets\\\\s+targetRevision: (?<currentValue>.*)"
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "bitnami-labs/sealed-secrets",
