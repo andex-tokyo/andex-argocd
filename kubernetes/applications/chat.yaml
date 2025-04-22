@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: andex-webui
-  namespace: argocd
+  namespace: librechat
 spec:
   destination:
     namespace: webui
