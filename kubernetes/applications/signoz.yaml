@@ -7,7 +7,7 @@ spec:
   project: default
   sources:
     - chart: signoz
-      targetRevision: 0.74.3
+      targetRevision: 0.78.0
       repoURL: https://charts.signoz.io
       helm:
         releaseName: andex-signoz
