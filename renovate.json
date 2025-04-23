@@ -13,26 +13,6 @@
       "versioningTemplate": "semver"
     },
     {
-      "fileMatch": ["kubernetes/applications/signoz.yaml"],
-      "matchStrings": [
-        "chart: signoz\\s+targetRevision: (?<currentValue>.*)"
-      ],
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "SigNoz/charts",
-      "versioningTemplate": "semver",
-      "extractVersionTemplate": "^signoz-(?<version>\\d+\\.\\d+\\.\\d+)$"
-    },
-    {
-      "fileMatch": ["kubernetes/applications/signoz.yaml"],
-      "matchStrings": [
-        "chart: k8s-infra\\s+targetRevision: (?<currentValue>.*)"
-      ],
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "SigNoz/charts",
-      "versioningTemplate": "semver",
-      "extractVersionTemplate": "^k8s-infra-(?<version>\\d+\\.\\d+\\.\\d+)$"
-    },
-    {
       "fileMatch": ["kubernetes/applications/sealed-secrets.yaml"],
       "matchStrings": [
         "\"chart: sealed-secrets\\\\s+targetRevision: (?<currentValue>.*)"
@@ -51,16 +31,6 @@
       "depNameTemplate": "cert-manager/cert-manager",
       "versioningTemplate": "semver",
       "extractVersionTemplate": "^v(?<version>\\d+\\.\\d+\\.\\d+)$"
-    },
-    {
-      "fileMatch": ["kubernetes/applications/otel-operator.yaml"],
-      "matchStrings": [
-        "targetRevision: (?<currentValue>.*)"
-      ],
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "open-telemetry/opentelemetry-helm-charts",
-      "versioningTemplate": "semver",
-      "extractVersionTemplate": "^opentelemetry-operator-(?<version>\\d+\\.\\d+\\.\\d+)$"
     }
   ],
   "assignees": ["andex-tokyo"]
