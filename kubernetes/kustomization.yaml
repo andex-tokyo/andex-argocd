@@ -18,7 +18,7 @@ resources:
 - sealed-secrets/sealed-argocd-secret.yaml
 - sealed-secrets/sealed-repo-2126746468.yaml
 - sealed-secrets/sealed-datadog-secret.yaml
-- applications/codimd.yaml
+- applications/obsidian-sync.yaml
 patches:
 - path: argocd/argocd-cmd-params-cm.yaml
 - path: argocd/argocd-nodeport.yaml
