@@ -15,6 +15,9 @@ spec:
     helm:
       releaseName: kube-prometheus-stack
       values: |
+        crds:
+          enabled: true
+        
         prometheus:
           prometheusSpec:
             retention: 30d
@@ -76,3 +79,4 @@ spec:
       prune: true
     syncOptions:
       - CreateNamespace=true
+      - ServerSideApply=true
