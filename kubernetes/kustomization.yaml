@@ -14,7 +14,6 @@ resources:
 - applications/kube-prometheus-stack.yaml
 - sealed-secrets/sealed-argocd-secret.yaml
 - sealed-secrets/sealed-repo-2126746468.yaml
-- sealed-secrets/sealed-datadog-secret.yaml
 - applications/obsidian-sync.yaml
 patches:
 - path: argocd/argocd-cmd-params-cm.yaml
