@@ -12,6 +12,8 @@ spec:
     path: kubernetes
     repoURL: https://github.com/andex-tokyo/andex-kube-prometheus.git
     targetRevision: HEAD
+    kustomize:
+      buildOptions: --enable-helm
   syncPolicy:
     automated:
       prune: true
