@@ -2,9 +2,12 @@
   "extends": [
     "config:recommended"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["kubernetes/kustomization.yaml"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/kubernetes/kustomization.yaml/"
+      ],
       "matchStrings": [
         "https://raw.githubusercontent.com/argoproj/argo-cd/(?<currentValue>[^/]+)/manifests/install.yaml"
       ],
@@ -13,7 +16,10 @@
       "versioningTemplate": "semver"
     },
     {
-      "fileMatch": ["kubernetes/applications/sealed-secrets.yaml"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/kubernetes/applications/sealed-secrets.yaml/"
+      ],
       "matchStrings": [
         "\"chart: sealed-secrets\\\\s+targetRevision: (?<currentValue>.*)"
       ],
@@ -23,7 +29,10 @@
       "extractVersionTemplate": "^helm-v(?<version>\\d+\\.\\d+\\.\\d+)$"
     },
     {
-      "fileMatch": ["kubernetes/applications/cert-manager.yaml"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/kubernetes/applications/cert-manager.yaml/"
+      ],
       "matchStrings": [
         "targetRevision: (?<currentValue>.*)"
       ],
@@ -33,7 +42,10 @@
       "extractVersionTemplate": "^v(?<version>\\d+\\.\\d+\\.\\d+)$"
     },
     {
-      "fileMatch": ["kubernetes/applications/kube-prometheus-stack.yaml"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/kubernetes/applications/kube-prometheus-stack.yaml/"
+      ],
       "matchStrings": [
         "chart: kube-prometheus-stack\\s+repoURL: https://prometheus-community\\.github\\.io/helm-charts\\s+targetRevision: (?<currentValue>.*)"
       ],
@@ -42,5 +54,7 @@
       "registryUrlTemplate": "https://prometheus-community.github.io/helm-charts"
     }
   ],
-  "assignees": ["andex-tokyo"]
+  "assignees": [
+    "andex-tokyo"
+  ]
 }
