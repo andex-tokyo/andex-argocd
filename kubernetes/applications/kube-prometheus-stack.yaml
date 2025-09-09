@@ -9,11 +9,68 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: kubernetes
-    repoURL: https://github.com/andex-tokyo/andex-kube-prometheus.git
-    targetRevision: HEAD
-    kustomize:
-      buildOptions: --enable-helm
+    chart: kube-prometheus-stack
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: 65.3.0
+    helm:
+      releaseName: kube-prometheus-stack
+      values: |
+        prometheus:
+          prometheusSpec:
+            retention: 30d
+            storageSpec:
+              volumeClaimTemplate:
+                spec:
+                  accessModes: ["ReadWriteOnce"]
+                  resources:
+                    requests:
+                      storage: 50Gi
+            resources:
+              requests:
+                memory: 400Mi
+                cpu: 100m
+          service:
+            type: NodePort
+            nodePort: 30090
+
+        grafana:
+          adminPassword: admin
+          persistence:
+            enabled: true
+            size: 10Gi
+          resources:
+            requests:
+              memory: 100Mi
+              cpu: 50m
+          sidecar:
+            dashboards:
+              enabled: true
+              searchNamespace: ALL
+            datasources:
+              enabled: true
+          service:
+            type: NodePort
+            nodePort: 30080
+
+        alertmanager:
+          alertmanagerSpec:
+            storage:
+              volumeClaimTemplate:
+                spec:
+                  accessModes: ["ReadWriteOnce"]
+                  resources:
+                    requests:
+                      storage: 10Gi
+            resources:
+              requests:
+                memory: 100Mi
+                cpu: 50m
+
+        prometheus-node-exporter:
+          resources:
+            requests:
+              memory: 30Mi
+              cpu: 10m
   syncPolicy:
     automated:
       prune: true
