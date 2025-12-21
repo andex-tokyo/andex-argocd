@@ -14,7 +14,7 @@ resources:
   - applications/kube-prometheus-stack.yaml
   - sealed-secrets/sealed-argocd-secret.yaml
   - sealed-secrets/sealed-repo-2126746468.yaml
-  - sealed-secrets/rize-dashboard-repo-secrets.yaml
+  - sealed-secrets/github-andex-tokyo-creds.yaml
   - applications/obsidian-sync.yaml
   - applications/rize.yaml
 patches:
