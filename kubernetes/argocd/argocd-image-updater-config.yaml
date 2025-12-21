@@ -8,5 +8,5 @@ data:
       - name: GitHub Container Registry
         prefix: ghcr.io
         api_url: https://ghcr.io
-        credentials: pullsecret:argocd/ghcr-credentials
+        credentials: secret:argocd/ghcr-credentials#username#password
         default: true
