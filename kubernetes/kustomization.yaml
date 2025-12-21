@@ -5,6 +5,7 @@ namespace: argocd
 
 resources:
   - https://raw.githubusercontent.com/argoproj/argo-cd/v3.2.2/manifests/install.yaml
+  - https://raw.githubusercontent.com/argoproj-labs/argocd-image-updater/stable/manifests/install.yaml
   - applications/sealed-secrets.yaml
   - applications/dify.yaml
   - applications/docuseal.yaml
@@ -13,6 +14,7 @@ resources:
   - applications/chat.yaml
   - applications/kube-prometheus-stack.yaml
   - sealed-secrets/sealed-argocd-secret.yaml
+  - sealed-secrets/sealed-ghcr-credentials.yaml
   - sealed-secrets/github-andex-tokyo-creds.yaml
   - applications/obsidian-sync.yaml
   - applications/rize-dashboard.yaml
@@ -23,3 +25,4 @@ patches:
   - path: argocd/argocd-server.yaml
   - path: argocd/argocd-repo-server.yaml
   - path: argocd/argocd-secrets.yaml
+  - path: argocd/argocd-image-updater-config.yaml
