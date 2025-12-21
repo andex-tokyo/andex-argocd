@@ -7,11 +7,6 @@ kind: Application
 metadata:
   name: rize-dashboard
   namespace: argocd
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: app=ghcr.io/andex-tokyo/rize-dashboard, worker=ghcr.io/andex-tokyo/rize-dashboard-worker
-    argocd-image-updater.argoproj.io/app.update-strategy: digest
-    argocd-image-updater.argoproj.io/worker.update-strategy: digest
-    argocd-image-updater.argoproj.io/write-back-method: argocd
 spec:
   destination:
     namespace: rize
