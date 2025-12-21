@@ -1,0 +1,23 @@
+# =====================================================
+# ArgoCD Application Definition
+# =====================================================
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rize
+  namespace: argocd
+spec:
+  destination:
+    namespace: rize
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: kubernetes
+    repoURL: https://github.com/andex-tokyo/rize-dashboard.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true

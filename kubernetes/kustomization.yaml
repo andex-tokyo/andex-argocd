@@ -4,21 +4,22 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-- https://raw.githubusercontent.com/argoproj/argo-cd/v3.2.2/manifests/install.yaml
-- applications/sealed-secrets.yaml
-- applications/dify.yaml
-- applications/docuseal.yaml
-- applications/cert-manager.yaml
-- applications/n8n.yaml
-- applications/chat.yaml
-- applications/kube-prometheus-stack.yaml
-- sealed-secrets/sealed-argocd-secret.yaml
-- sealed-secrets/sealed-repo-2126746468.yaml
-- applications/obsidian-sync.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/v3.2.2/manifests/install.yaml
+  - applications/sealed-secrets.yaml
+  - applications/dify.yaml
+  - applications/docuseal.yaml
+  - applications/cert-manager.yaml
+  - applications/n8n.yaml
+  - applications/chat.yaml
+  - applications/kube-prometheus-stack.yaml
+  - sealed-secrets/sealed-argocd-secret.yaml
+  - sealed-secrets/sealed-repo-2126746468.yaml
+  - applications/obsidian-sync.yaml
+  - applications/rize.yaml
 patches:
-- path: argocd/argocd-cmd-params-cm.yaml
-- path: argocd/argocd-nodeport.yaml
-- path: argocd/argocd-application-controller.yaml
-- path: argocd/argocd-server.yaml
-- path: argocd/argocd-repo-server.yaml
-- path: argocd/argocd-secrets.yaml
+  - path: argocd/argocd-cmd-params-cm.yaml
+  - path: argocd/argocd-nodeport.yaml
+  - path: argocd/argocd-application-controller.yaml
+  - path: argocd/argocd-server.yaml
+  - path: argocd/argocd-repo-server.yaml
+  - path: argocd/argocd-secrets.yaml
