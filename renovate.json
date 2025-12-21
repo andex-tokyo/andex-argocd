@@ -1,13 +1,9 @@
 {
-  "extends": [
-    "config:recommended"
-  ],
+  "extends": ["config:recommended"],
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "/kubernetes/kustomization.yaml/"
-      ],
+      "managerFilePatterns": ["/kubernetes/kustomization.yaml/"],
       "matchStrings": [
         "https://raw.githubusercontent.com/argoproj/argo-cd/(?<currentValue>[^/]+)/manifests/install.yaml"
       ],
@@ -17,9 +13,18 @@
     },
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "/kubernetes/applications/sealed-secrets.yaml/"
+      "managerFilePatterns": ["/kubernetes/kustomization.yaml/"],
+      "matchStrings": [
+        "https://github.com/argoproj-labs/argocd-image-updater//manifests/base\\?ref=(?<currentValue>v[0-9.]+)"
       ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "argoproj-labs/argocd-image-updater",
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "^(?<version>v0\\.\\d+\\.\\d+)$"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/kubernetes/applications/sealed-secrets.yaml/"],
       "matchStrings": [
         "\"chart: sealed-secrets\\\\s+targetRevision: (?<currentValue>.*)"
       ],
@@ -30,12 +35,8 @@
     },
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "/kubernetes/applications/cert-manager.yaml/"
-      ],
-      "matchStrings": [
-        "targetRevision: (?<currentValue>.*)"
-      ],
+      "managerFilePatterns": ["/kubernetes/applications/cert-manager.yaml/"],
+      "matchStrings": ["targetRevision: (?<currentValue>.*)"],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "cert-manager/cert-manager",
       "versioningTemplate": "semver",
@@ -54,7 +55,5 @@
       "registryUrlTemplate": "https://prometheus-community.github.io/helm-charts"
     }
   ],
-  "assignees": [
-    "andex-tokyo"
-  ]
+  "assignees": ["andex-tokyo"]
 }
