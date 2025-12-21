@@ -11,7 +11,8 @@ resources:
   - applications/docuseal.yaml
   - applications/cert-manager.yaml
   - applications/n8n.yaml
-  - applications/chat.yaml  - sealed-secrets/sealed-argocd-secret.yaml
+  - applications/chat.yaml
+  - sealed-secrets/sealed-argocd-secret.yaml
   - sealed-secrets/sealed-ghcr-credentials.yaml
   - sealed-secrets/github-andex-tokyo-creds.yaml
   - applications/obsidian-sync.yaml
