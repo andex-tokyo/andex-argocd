@@ -41,18 +41,6 @@
       "depNameTemplate": "cert-manager/cert-manager",
       "versioningTemplate": "semver",
       "extractVersionTemplate": "^v(?<version>\\d+\\.\\d+\\.\\d+)$"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/kubernetes/applications/kube-prometheus-stack.yaml/"
-      ],
-      "matchStrings": [
-        "chart: kube-prometheus-stack\\s+repoURL: https://prometheus-community\\.github\\.io/helm-charts\\s+targetRevision: (?<currentValue>.*)"
-      ],
-      "datasourceTemplate": "helm",
-      "depNameTemplate": "kube-prometheus-stack",
-      "registryUrlTemplate": "https://prometheus-community.github.io/helm-charts"
     }
   ],
   "assignees": ["andex-tokyo"]
