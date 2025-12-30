@@ -12,12 +12,8 @@ spec:
     helm:
       values: |
         installCRDs: true
-        revisionHistoryLimit: 2
-        webhook:
-          revisionHistoryLimit: 2
-        cainjector:
-          revisionHistoryLimit: 2
-        startupapicheck:
+        replicaCount: 1
+        global:
           revisionHistoryLimit: 2
   destination:
     server: https://kubernetes.default.svc
