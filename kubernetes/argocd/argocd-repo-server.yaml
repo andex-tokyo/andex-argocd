@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: argocd-repo-server
 spec:
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 2
   template:
     metadata:
       annotations:

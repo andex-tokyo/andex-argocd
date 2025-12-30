@@ -12,13 +12,13 @@ spec:
     helm:
       values: |
         installCRDs: true
-        revisionHistoryLimit: 3
+        revisionHistoryLimit: 2
         webhook:
-          revisionHistoryLimit: 3
+          revisionHistoryLimit: 2
         cainjector:
-          revisionHistoryLimit: 3
+          revisionHistoryLimit: 2
         startupapicheck:
-          revisionHistoryLimit: 3
+          revisionHistoryLimit: 2
   destination:
     server: https://kubernetes.default.svc
     namespace: cert-manager

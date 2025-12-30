@@ -3,7 +3,7 @@ kind: StatefulSet
 metadata:
   name: argocd-application-controller
 spec:
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 2
   template:
     metadata:
       annotations:
