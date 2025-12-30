@@ -25,3 +25,4 @@ patches:
   - path: argocd/argocd-repo-server.yaml
   - path: argocd/argocd-secrets.yaml
   - path: argocd/argocd-image-updater-config.yaml
+  - path: argocd/argocd-image-updater.yaml

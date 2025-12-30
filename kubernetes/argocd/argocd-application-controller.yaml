@@ -3,6 +3,7 @@ kind: StatefulSet
 metadata:
   name: argocd-application-controller
 spec:
+  revisionHistoryLimit: 3
   template:
     metadata:
       annotations:
@@ -19,7 +20,7 @@ spec:
           }
     spec:
       containers:
-        - name: 'argocd-application-controller'
+        - name: "argocd-application-controller"
           env:
             - name: ARGOCD_METRICS_APP_LABELS
               value: "true"
