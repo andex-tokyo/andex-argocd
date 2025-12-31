@@ -15,7 +15,7 @@ resources:
   - sealed-secrets/sealed-argocd-secret.yaml
   - sealed-secrets/sealed-ghcr-credentials.yaml
   - sealed-secrets/github-andex-tokyo-creds.yaml
-  - sealed-secrets/sealed-datadog-secret.yaml
+
   - applications/obsidian-sync.yaml
   - applications/rize-dashboard.yaml
   - applications/datadog.yaml
