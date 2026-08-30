@@ -20,6 +20,17 @@ spec:
       instrumentation:
         enabled: true
         targets:
+          - name: nodejs-workloads
+            podSelector:
+              matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                    - librechat
+                    - rize-app
+                    - rize-worker
+            ddTraceVersions:
+              js: "5"
           - name: default-target
             ddTraceVersions:
               java: "1"
