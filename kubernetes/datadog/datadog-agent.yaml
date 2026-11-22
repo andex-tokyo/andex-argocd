@@ -27,8 +27,6 @@ spec:
                   operator: In
                   values:
                     - librechat
-                    - rize-app
-                    - rize-worker
             ddTraceVersions:
               js: "5"
           - name: default-target

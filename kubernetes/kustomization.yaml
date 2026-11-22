@@ -15,7 +15,6 @@ resources:
   - sealed-secrets/github-andex-tokyo-creds.yaml
 
   # - applications/obsidian-sync.yaml
-  - applications/rize-dashboard.yaml
   - applications/datadog.yaml
 patches:
   - target:
